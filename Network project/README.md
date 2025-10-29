@@ -2,7 +2,8 @@
 > 🧩 A three-floor enterprise network design featuring VLAN segmentation, OSPF dynamic routing, DHCP automation, and secure SSH management.
 
 
-![Network Topology Overview](./Screenshots/topology_overview.png)
+![Network Topology Overview]("Network project/Screenshots/topology_overview.png")
+
 
 ## 📘 Project Overview
 This project demonstrates the design and implementation of a three-floor enterprise network for **Vic Modern Hotel** using Cisco Packet Tracer.  
@@ -64,4 +65,5 @@ Minnesota State University, Mankato (2026)
 ---
 ### 🏷️ Tags
 `#Cisco` `#Networking` `#VLAN` `#OSPF` `#DHCP` `#SSH` `#PacketTracer` `#Cybersecurity` `#NetworkDesign`
+
 
