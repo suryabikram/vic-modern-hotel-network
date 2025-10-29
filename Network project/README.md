@@ -2,7 +2,7 @@
 > 🧩 A three-floor enterprise network design featuring VLAN segmentation, OSPF dynamic routing, DHCP automation, and secure SSH management.
 
 
-![Network Topology Overview](Network%20project/Screenshots/topology_overview.png)
+![Network Topology Overview](https://github.com/suryabikram/vic-modern-hotel-network/blob/main/Network%20project/Screenshots/topology_overview.png?raw=true)
 <p align="center"><em>Figure 1: Network Topology Overview</em></p>
 
 
@@ -67,6 +67,7 @@ Minnesota State University, Mankato (2026)
 ---
 ### 🏷️ Tags
 `#Cisco` `#Networking` `#VLAN` `#OSPF` `#DHCP` `#SSH` `#PacketTracer` `#Cybersecurity` `#NetworkDesign`
+
 
 
 
