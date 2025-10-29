@@ -1,0 +1,26 @@
+Step5_PortSecurity
+
+Purpose:
+To implement switch-level security by limiting access on IT department switch ports.
+
+Why I did this:
+To prevent unauthorized devices from connecting to the network. Using port-security sticky MAC, the switch learns the legitimate device’s MAC address and shuts down if another tries to connect.
+
+What I did:
+
+Configured port Fa0/4 for port security
+
+Allowed maximum 1 MAC address
+
+Used sticky MAC and shutdown violation mode
+
+Result:
+Verified with show port-security interface fa0/4 — Test-PC’s MAC address was learned and port secured.
+
+Switch(config)#do sh port-security
+Secure Port MaxSecureAddr CurrentAddr SecurityViolation Security Action
+               (Count)       (Count)        (Count)
+--------------------------------------------------------------------
+        Fa0/4        1          1                 0         Shutdown
+----------------------------------------------------------------------
+Switch(config)#

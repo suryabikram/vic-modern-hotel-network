@@ -1,0 +1,53 @@
+Verification.md
+
+Purpose:
+To record all final testing and validation results after full configuration.
+
+Why I did this:
+To prove the network works — all routers, VLANs, DHCP, SSH, and port-security features function correctly.
+
+What I did:
+
+Verified inter-VLAN ping between hosts
+
+Checked OSPF learned routes
+
+Confirmed DHCP leases
+
+Tested SSH access
+
+Checked switch port security status
+
+Result:
+✅ All VLANs reachable
+✅ OSPF routes exchanged
+✅ DHCP working
+✅ SSH login successful
+✅ Port-security enforced
+
+Checking connection to device in different vlan.
+C:\>ping 192.168.3.3
+
+Pinging 192.168.3.3 with 32 bytes of data:
+
+Reply from 192.168.3.3: bytes=32 time=655ms TTL=126
+Reply from 192.168.3.3: bytes=32 time=461ms TTL=126
+Reply from 192.168.3.3: bytes=32 time=394ms TTL=126
+Reply from 192.168.3.3: bytes=32 time=16ms TTL=126
+
+Ping statistics for 192.168.3.3:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 16ms, Maximum = 655ms, Average = 381ms 
+
+I could securely connect to routers remotely using ssh -l admin <router_IP>.
+
+Check for ssh : 
+
+C:\>ssh -l Router2 10.10.10.10 
+
+Password:  
+
+F2-Router> exit 
+
+Login success 

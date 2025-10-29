@@ -1,0 +1,48 @@
+Purpose:
+To document all IP addresses used in the network — VLAN gateways, WAN links, and excluded addresses.
+
+Why I did this:
+An IP addressing plan is essential for consistency, avoiding overlap, and easy troubleshooting.
+
+What I did:
+
+Created a WAN addressing plan using /30 subnets for serial links
+
+Assigned gateway IPs for each VLAN
+
+Excluded router IPs from DHCP pools
+
+Result:
+A clear record of every IP subnet and purpose (WAN vs VLAN).
+
+
+Switch 1 example
+Switch#show vlan brief
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Fa0/8, Fa0/9, Fa0/10, Fa0/11
+                                                Fa0/12, Fa0/13, Fa0/14, Fa0/15
+                                                Fa0/16, Fa0/17, Fa0/18, Fa0/19
+                                                Fa0/20, Fa0/21, Fa0/22, Fa0/23
+                                                Fa0/24, Gig0/1, Gig0/2
+60   VLAN0060                         active    Fa0/6, Fa0/7
+70   VLAN0070                         active    Fa0/4, Fa0/5
+80   VLAN0080                         active    Fa0/2, Fa0/3
+1002 fddi-default                     active    
+1003 token-ring-default               active    
+1004 fddinet-default                  active    
+1005 trnet-default                    active   
+ 
+Easy-to-read VLAN map for the whole network.
+
+| VLAN ID | Department | Network        | Router |
+| ------- | ---------- | -------------- | ------ |
+| 10      | IT         | 192.168.1.0/24 | R3     |
+| 20      | Admin      | 192.168.2.0/24 | R3     |
+| 30      | Sales      | 192.168.3.0/24 | R2     |
+| 40      | HR         | 192.168.4.0/24 | R2     |
+| 50      | Finance    | 192.168.5.0/24 | R2     |
+| 60      | Logistics  | 192.168.6.0/24 | R1     |
+| 70      | Store      | 192.168.7.0/24 | R1     |
+| 80      | Reception  | 192.168.8.0/24 | R1     |

@@ -1,0 +1,40 @@
+# Router R1/F1 - First Floor
+
+Router>enable
+Router#configure terminal
+Router(config)#router ospf 10
+Router(config-router)#network 10.10.10.4 255.255.255.252 area 0
+Router(config-router)#network 10.10.10.8 255.255.255.252 area 0
+Router(config-router)#network 192.168.8.0 255.255.255.0 area 0
+Router(config-router)#network 192.168.7.0 255.255.255.0 area 0
+Router(config-router)#network 192.168.6.0 255.255.255.0 area 0
+Router(config-router)#do wr
+Building configuration...
+[OK]
+
+
+# Router R2/F2 - Second Floor
+Router>enable
+Router#configure terminal
+Router(config)#router ospf 10
+Router(config-router)#network 10.10.10.0 255.255.255.252 area 0
+Router(config-router)#network 10.10.10.8 255.255.255.252 area 0
+Router(config-router)#network 192.168.3.0 255.255.255.0 area 0
+Router(config-router)#network 192.168.4.0 255.255.255.0 area 0
+Router(config-router)#network 192.168.5.0 255.255.255.0 area 0
+Router(config-router)#do wr
+Building configuration...
+[OK]
+
+# Router R3/F3 - Third Floor
+
+Router>enable
+Router#configure terminal
+Router(config)#router ospf 10
+Router(config-router)#network 10.10.10.0 255.255.255.252 area 0
+Router(config-router)#network 10.10.10.4 255.255.255.252 area 0
+Router(config-router)#network 192.168.1.0 255.255.255.0 area 0
+Router(config-router)#network 192.168.2.0 255.255.255.0 area 0
+Router(config-router)#do wr
+Building configuration...
+[OK]

@@ -1,0 +1,28 @@
+! VLAN Subinterfaces and DHCP for Floor 3
+R3(config)#int gig0/0.10
+R3(config-subif)#encapsulation dot1Q 10
+R3(config-subif)#ip address 192.168.1.1 255.255.255.0
+R3(config-subif)#exit
+
+R3(config)#int gig0/0.20
+R3(config-subif)#encapsulation dot1Q 20
+R3(config-subif)#ip address 192.168.2.1 255.255.255.0
+R3(config-subif)#exit
+
+! --- DHCP Configuration for Each VLAN
+
+R3(config)#ip dhcp pool IT
+R3(dhcp-config)#network 192.168.1.0 255.255.255.0
+R3(dhcp-config)#default-router 192.168.1.1
+R3(dhcp-config)#dns-server 192.168.1.1
+
+R3(dhcp-config)#exit
+
+R3(config)#ip dhcp pool Admin
+R3(dhcp-config)#network 192.168.2.0 255.255.255.0
+R3(dhcp-config)#default-router 192.168.2.1
+R3(dhcp-config)#dns-server 192.168.2.1
+R3(dhcp-config)#exit
+R3(config)#do wr
+Building configuration...
+[OK]

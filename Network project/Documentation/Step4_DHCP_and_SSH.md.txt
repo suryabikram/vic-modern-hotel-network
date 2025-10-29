@@ -1,0 +1,45 @@
+Step4_DHCP_and_SSH
+
+Purpose:
+To assign IP addresses automatically to hosts using DHCP and secure router management via SSH.
+
+Why I did this:
+Manual IP assignment is inefficient. Configuring routers as DHCP servers ensures each department gets IPs in its VLAN range. SSH was configured to securely log in to routers for management.
+
+What I did:
+
+Created DHCP pools (ip dhcp pool) for each VLAN
+
+Defined network, default router, and DNS server
+
+Configured SSH using RSA key generation and user authentication
+
+Result:
+Devices automatically received IPs via DHCP.
+C:\>ipconfig
+
+FastEthernet0 Connection:(default port)
+
+   Connection-specific DNS Suffix..: Reception.com
+   Link-local IPv6 Address.........: FE80::260:70FF:FE0C:42C
+   IPv6 Address....................: ::
+   IPv4 Address....................: 192.168.8.3
+   Subnet Mask.....................: 255.255.255.0
+   Default Gateway.................: ::
+                                     192.168.8.1
+
+I could securely connect to routers remotely using ssh -l admin <router_IP>.
+
+C:\>ipconfig
+
+FastEthernet0 Connection:(default port)
+
+   Connection-specific DNS Suffix..: Reception.com
+   Link-local IPv6 Address.........: FE80::260:70FF:FE0C:42C
+   IPv6 Address....................: ::
+   IPv4 Address....................: 192.168.8.3
+   Subnet Mask.....................: 255.255.255.0
+   Default Gateway.................: ::
+                                     192.168.8.1
+
+

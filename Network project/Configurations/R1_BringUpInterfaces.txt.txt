@@ -1,0 +1,29 @@
+Router(config)#int se 0/2/0 
+
+Router(config-if)#no shutdown 
+
+ 
+
+%LINK-5-CHANGED: Interface Serial0/2/0, changed state to down 
+
+Router(config-if)# 
+
+Router(config-if)#int se0/2/1 
+
+Router(config-if)#no shutdown 
+
+ 
+
+%LINK-5-CHANGED: Interface Serial0/2/1, changed state to down 
+
+Router(config-if)# 
+
+Router(config-if)#int gig0/0 
+
+Router(config-if)#no shutdown 
+
+Router(config-if)#do wr 
+
+Building configuration... 
+
+[OK] 

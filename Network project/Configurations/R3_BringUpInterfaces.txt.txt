@@ -1,0 +1,45 @@
+R3: 
+
+Router>en 
+
+Router#config t 
+
+Enter configuration commands, one per line. End with CNTL/Z. 
+
+Router(config)#int se0/2/1 
+
+Router(config-if)#no shutdown 
+
+ 
+
+Router(config-if)# 
+
+Router(config-if)#int se0/2/0 
+
+Router(config-if)#no shutdown 
+
+ 
+
+Router(config-if)#int gig0/0 
+
+Router(config-if)#no shutdown 
+
+ 
+
+Router(config-if)#int se0/2/0 
+
+Router(config-if)#clock rate 64000 
+
+ 
+
+Router(config-if)#int se0/2/01 
+
+Router(config-if)#clock rate 64000 
+
+ 
+
+Router(config-if)#do wr 
+
+Building configuration... 
+
+[OK] 

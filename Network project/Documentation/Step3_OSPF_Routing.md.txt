@@ -1,0 +1,34 @@
+
+Purpose:
+To configure OSPF (Open Shortest Path First) as the dynamic routing protocol between routers.
+
+Why I did this:
+I needed automatic route exchange between routers instead of static routes. OSPF allows each router to share its networks with others dynamically and efficiently.
+
+What I did:
+
+Used router ospf 10 to start the process
+
+Advertised all VLAN and serial networks using network commands
+
+Verified neighbor relationships with show ip ospf neighbor
+
+Result:
+Each router learned remote networks automatically.
+
+F1-Router#show ip route ospf
+     10.0.0.0/8 is variably subnetted, 5 subnets, 2 masks
+O       10.10.10.0 [110/128] via 10.10.10.10, 00:20:36, Serial0/2/1
+                   [110/128] via 10.10.10.6, 00:20:36, Serial0/2/0
+O    192.168.3.0 [110/65] via 10.10.10.10, 00:20:36, Serial0/2/1
+O    192.168.4.0 [110/65] via 10.10.10.10, 00:20:36, Serial0/2/1
+O    192.168.5.0 [110/65] via 10.10.10.10, 00:20:36, Serial0/2/1
+
+
+1-Router#show ip ospf neighbor
+
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+192.168.5.1       0   FULL/  -        00:00:30    10.10.10.10     Serial0/2/1
+192.168.2.1       0   FULL/  -        00:00:38    10.10.10.6      Serial0/2/0
+F1-Router#

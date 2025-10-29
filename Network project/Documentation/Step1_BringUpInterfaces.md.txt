@@ -1,0 +1,28 @@
+# Step 1 — Bring Up WAN and LAN Interfaces
+
+Purpose:
+To document how I brought up all routers’ physical and logical interfaces. This was the first step to ensure WAN and LAN links were active before configuring higher-level protocols.
+
+Why I did this:
+Without activating interfaces (no shutdown), the routers remain disconnected, preventing OSPF neighbors and DHCP from functioning.
+
+What I did:
+
+Enabled serial interfaces between routers for WAN links
+
+Enabled GigabitEthernet0/0 interfaces for VLAN trunking
+
+Verified using show ip interface brief
+example: Floor 1 router
+
+F1-Router#show ip interface brief
+Interface              IP-Address      OK? Method Status                Protocol 
+GigabitEthernet0/0     unassigned      YES unset  up                    up 
+GigabitEthernet0/0.60  192.168.6.1     YES manual up                    up 
+GigabitEthernet0/0.70  192.168.7.1     YES manual up                    up 
+GigabitEthernet0/0.80  192.168.8.1     YES manual up                    up 
+GigabitEthernet0/1     unassigned      YES unset  administratively down down 
+GigabitEthernet0/2     unassigned      YES unset  administratively down down 
+Serial0/2/0            10.10.10.5      YES manual up                    up 
+Serial0/2/1            10.10.10.9      YES manual up                    up 
+Vlan1                  unassigned      YES unset  administratively down down

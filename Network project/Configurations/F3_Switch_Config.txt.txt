@@ -1,0 +1,21 @@
+Switch>en  
+
+Switch#config t 
+
+Enter configuration commands, one per line. End with CNTL/Z. 
+Switch(config)#int range fa0/4-5
+Switch(config-if-range)#switchport mode access
+Switch(config-if-range)#switchport access vlan 10
+% Access VLAN does not exist. Creating vlan 10
+
+Switch(config)#int range fa0/6-7
+Switch(config-if-range)#switchport mode access
+Switch(config-if-range)#switchport access vlan 20
+% Access VLAN does not exist. Creating vlan 20
+
+Switch(config)#int fa0/1
+Switch(config-if)#switchport mode trunk
+Switch(config-if)#do wr
+Building configuration... 
+
+[OK] 

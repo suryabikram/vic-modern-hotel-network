@@ -1,0 +1,35 @@
+Router(config-if)# 
+
+Router(config-if)# 
+
+Router(config)#int se0/2/1 
+
+Router(config-if)#no shutdown 
+
+ 
+
+Router(config-if)# 
+
+Router(config-if)#int se0/2/0 
+
+Router(config-if)#no shutdown 
+
+ 
+
+Router(config-if)#int gig0/0 
+
+Router(config-if)#no shutdown 
+
+ 
+
+Router(config-if)#int se0/2/0 
+
+Router(config-if)#clock rate 64000 
+
+ 
+
+Router(config-if)#do wr 
+
+Building configuration... 
+
+[OK] 

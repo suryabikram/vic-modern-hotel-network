@@ -1,0 +1,64 @@
+
+Router>enable
+Router#configure terminal
+
+! --- Enable main interface
+Router(config)#interface gigabitEthernet0/0
+Router(config-if)#no shutdown
+Router(config-if)#exit
+
+! --- VLAN 60 - Logistics Department
+Router(config)#interface gigabitEthernet0/0.60
+Router(config-subif)#encapsulation dot1Q 60
+Router(config-subif)#ip address 192.168.6.1 255.255.255.0
+Router(config-subif)#exit
+
+! --- VLAN 70 - Store Department
+Router(config)#interface gigabitEthernet0/0.70
+Router(config-subif)#encapsulation dot1Q 70
+Router(config-subif)#ip address 192.168.7.1 255.255.255.0
+Router(config-subif)#exit
+
+! --- VLAN 80 - Reception Department
+Router(config)#interface gigabitEthernet0/0.80
+Router(config-subif)#encapsulation dot1Q 80
+Router(config-subif)#ip address 192.168.8.1 255.255.255.0
+Router(config-subif)#exit
+
+! --- Save configuration
+Router(config)#do write
+Building configuration...
+[OK]
+
+
+! --- DHCP Configuration for Each VLAN
+
+
+! --- VLAN 60: Logistics Department DHCP Pool
+Router(config)#service dhcp
+Router(config)#ip dhcp pool Logistics
+Router(dhcp-config)#network 192.168.6.0 255.255.255.0
+Router(dhcp-config)#default-router 192.168.6.1
+Router(dhcp-config)#dns-server 192.168.6.1
+
+Router(dhcp-config)#exit
+
+! --- VLAN 70: Store Department DHCP Pool
+Router(config)#ip dhcp pool Store
+Router(dhcp-config)#network 192.168.7.0 255.255.255.0
+Router(dhcp-config)#default-router 192.168.7.1
+Router(dhcp-config)#dns-server  192.168.7.1
+
+Router(dhcp-config)#exit
+
+! --- VLAN 80: Reception Department DHCP Pool
+Router(config)#ip dhcp pool Reception
+Router(dhcp-config)#network 192.168.8.0 255.255.255.0
+Router(dhcp-config)#default-router 192.168.8.1
+Router(dhcp-config)#dns-server 192.168.8.1
+Router(dhcp-config)#exit
+
+! --- Save configuration
+Router(config)#do write
+Building configuration...
+[OK]
