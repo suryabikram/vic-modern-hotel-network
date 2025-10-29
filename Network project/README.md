@@ -3,6 +3,7 @@
 
 
 ![Network Topology Overview](Network%20project/topology_overview.png)
+<p align="center"><em>Figure 1: Network Topology Overview</em></p>
 
 
 ## 📘 Project Overview
@@ -65,6 +66,7 @@ Minnesota State University, Mankato (2026)
 ---
 ### 🏷️ Tags
 `#Cisco` `#Networking` `#VLAN` `#OSPF` `#DHCP` `#SSH` `#PacketTracer` `#Cybersecurity` `#NetworkDesign`
+
 
 
 
